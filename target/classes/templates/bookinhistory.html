@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking History</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+<h1>Booking History</h1>
+
+<!-- Check if message exists -->
+<div th:if="${message != null}">
+    <p th:text="${message}"></p>
+</div>
+
+<table th:if="${history != null}">
+    <thead>
+    <tr>
+        <th>Booking ID</th>
+        <th>Room ID</th>
+        <th>Room Name</th>
+        <th>Purpose</th>
+        <th>Date of Booking</th>
+        <th>Time From</th>
+        <th>Time To</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="booking : ${history}">
+        <td th:text="${booking.bookingID}"></td>
+        <td th:text="${booking.roomID}"></td>
+        <td th:text="${booking.roomName}"></td>
+        <td th:text="${booking.purpose}"></td>
+        <td th:text="${#dates.format(booking.dateOfBooking, 'yyyy-MM-dd')}"></td>
+        <td th:text="${booking.timeFrom}"></td>
+        <td th:text="${booking.timeTo}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>BITS-HYD MyClass</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Classroom Booking</h1>-->
+<!--<form action="/book/books" method="post">-->
+<!--    <label for="userID">User id :</label><br/>-->
+<!--    <input type="number" id="userID" name="userID"><br/>-->
+
+<!--    <label for="roomID">Room id :</label><br/>-->
+<!--    <input type="number" id="roomID" name="roomID"><br/>-->
+
+<!--    <label for="dateOfBooking">Date of booking :</label><br/>-->
+<!--    <input type="text" id="dateOfBooking" name="dateOfBooking"  required pattern="\d{4}-\d{2}-\d{2}"><br/>-->
+
+<!--    <label for="timeFrom">Start time :</label><br/>-->
+<!--    <input type="text" id="timeFrom" name="timeFrom"><br/>-->
+
+<!--    <label for="timeTo">End time :</label><br/>-->
+<!--    <input type="text" id="timeTo" name="timeTo"><br/>-->
+
+<!--    <label for="purpose">Purpose of booking :</label><br/>-->
+<!--    <input type="text" id="purpose" name="purpose"><br/>-->
+
+<!--    <button type="submit">Submit</button>-->
+
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BITS-HYD MyClass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .form-container {
+            width: 300px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .form-container input[type="number"],
+        .form-container input[type="text"] {
+            width: 275px;
+            padding: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-container button[type="submit"] {
+            width: 275px;
+            margin-left: 9px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-container button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h1>Classroom Booking</h1>
+    <form action="/book/books" method="post">
+        <label for="userID">User ID:</label>
+        <input type="number" id="userID" name="userID" required>
+
+        <label for="roomID">Room ID:</label>
+        <input type="number" id="roomID" name="roomID" required>
+
+        <label for="dateOfBooking">Date of Booking:</label>
+        <input type="text" id="dateOfBooking" name="dateOfBooking" required pattern="\d{4}-\d{2}-\d{2}">
+
+        <label for="timeFrom">Start Time:</label>
+        <input type="text" id="timeFrom" name="timeFrom" required>
+
+        <label for="timeTo">End Time:</label>
+        <input type="text" id="timeTo" name="timeTo" required>
+
+        <label for="purpose">Purpose of Booking:</label>
+        <input type="text" id="purpose" name="purpose" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

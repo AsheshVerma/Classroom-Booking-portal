@@ -1,0 +1,145 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en" xmlns:th="http://www.thymeleaf.org">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>User List</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<h1>List of Users</h1>&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash; Check if message exists &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<div th:if="${message != null}">&ndash;&gt;-->
+<!--&lt;!&ndash;    <p th:text="${message}"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<table th:if="${userID != null}">&ndash;&gt;-->
+<!--&lt;!&ndash;    <thead>&ndash;&gt;-->
+<!--&lt;!&ndash;    <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>UserID</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>Name</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>Email</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; Add more columns as needed &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;    </thead>&ndash;&gt;-->
+<!--&lt;!&ndash;    <tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;    <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${userID}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${name}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td th:text="${email}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; Add more columns as needed &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;    </tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;</table>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>BITS-HYD MyClass</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>List of Users</h1>-->
+
+<!--&lt;!&ndash; Check if message exists &ndash;&gt;-->
+<!--<div th:if="${message != null}">-->
+<!--    <p th:text="${message}"></p>-->
+<!--</div>-->
+
+<!--<table th:if="${users != null}">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>UserID</th>-->
+<!--        <th>Name</th>-->
+<!--        <th>Email</th>-->
+<!--        &lt;!&ndash; Add more columns as needed &ndash;&gt;-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="user : ${users}">-->
+<!--        <td th:text="${user.userID}"></td>-->
+<!--        <td th:text="${user.name}"></td>-->
+<!--        <td th:text="${user.emailId}"></td>-->
+<!--        &lt;!&ndash; Add more columns as needed &ndash;&gt;-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            width:750px
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>List of Users</h1>
+
+    <!-- Check if message exists -->
+    <div th:if="${message != null}">
+        <p th:text="${message}"></p>
+    </div>
+
+    <table th:if="${users != null}">
+        <thead>
+        <tr>
+            <th>UserID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <!-- Add more columns as needed -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.userID}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.emailId}"></td>
+            <!-- Add more columns as needed -->
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

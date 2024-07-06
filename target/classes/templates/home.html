@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BITS-HYD MyClass</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            /*padding: 0;*/
+            /*display: flex;*/
+            /*background-image: url("bits_img.png");*/
+            /*background-size: cover;*/
+            /*height: 750px;*/
+            padding: 0;
+            display: flex;
+            height: 100vh; /* Ensure body takes full viewport height */
+            margin: 0;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/bits_img.png");
+            background-size: cover;
+            opacity: 0.6; /* Adjust opacity here */
+            z-index: -1; /* Ensure the background is behind the content */
+            /*filter: brightness(0.8);*/
+        }
+
+        header {
+            border-bottom-color: #000000;
+            display: flex;
+            justify-content: space-evenly;
+            /*justify-content: center;*/
+           /* align-items: center;*/
+
+            /*padding: 10px;*/
+            width: 200%;
+            height: 60px;
+            /*box-sizing: border-box;*/
+
+            background: linear-gradient(to right, #ffcc33 0%, #ffcc33 33.33%, #99ccff 33.33%, #99ccff 66.33%,
+            #ff3300 0%, #ff3300 33.33%);
+
+            /*background-color: #ffcc33;
+            /*margin-bottom: 5px;*/
+            background-size: cover;
+            margin: 0; /* Reset default margin */
+            padding-right: 10px;
+        }
+
+        header form {
+            margin: 0;
+            padding-left: 20px;
+
+        }
+
+        button {
+            margin-left: 2px;
+            height: 40px;
+            border: 1px solid transparent;
+            margin-top:8px;
+            background: none;
+            /*border: none;*/
+            border-radius: 8px;
+            padding: 1px 1px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #000000;
+            padding: 0;
+            /*font-weight: bold;*/
+        }
+        button:hover {
+            border: 1px solid #f6f6f6;/* Optional: Change background color on hover */
+        }
+        .side{
+            position: absolute;
+            left: 0;
+            top: 40%;
+            transform: translateY(-50%);
+            margin-left: 20px; /* Optional: Add some margin from the left edge */
+            background-color: transparent; /* Optional: Add background for better visibility */
+            padding: 10px;             /* Optional: Add padding for better spacing */
+            font-weight: bolder;
+            color: white;
+            height: 100px;
+            font-size: 2em;
+            font-family: Calibri;
+            text-shadow:
+                    -1px -1px 0 #000,
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="side">
+    <h1>BITS Pilani</h1>
+    <h1>Hyderabad Campus</h1>
+    <h2> MyClass</h2>
+
+</div>
+<header>
+<form action="/authenticate" method="get">
+    <button type="submit">Log in</button>
+</form>
+<form action="/sign" method="get">
+    <button type="submit">Sign up</button>
+</form>
+<form action="/userid" method="get">
+    <button type="submit">My details</button>
+</form>
+<form action="/history" method="get">
+    <button type="submit">History</button>
+</form>
+<form action="/mybooking" method="get">
+    <button type="submit">My bookings</button>
+</form>
+<form action="/users" method="get">
+    <button type="submit">All users</button>
+</form>
+
+<!--room-->
+<form action="/rooms/addroom" method="get">
+    <button type="submit">Add classroom</button>
+</form>
+<form action="/rooms/delete" method="get">
+    <button type="submit">Delete classroom</button>
+</form>
+    <form action="/rooms/updateroom" method="get">
+        <button type="submit">Update classroom details</button>
+    </form>
+<form action="/rooms/get" method="get">
+    <button type="submit">Classroom list</button>
+</form>
+
+<!--booking-->
+<form action="/book/booking" method="get">
+    <button type="submit">Book classroom</button>
+</form>
+<form action="/book/delete" method="get">
+    <button type="submit">Cancel booking</button>
+</form>
+<form action="/book/edit" method="get">
+    <button type="submit">Update booking</button>
+</form>
+</header>
+</body>
+</html>

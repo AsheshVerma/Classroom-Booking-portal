@@ -1,0 +1,111 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>BITS-HYD MyClass</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>User details</h1>-->
+
+<!--&lt;!&ndash; Check if message exists &ndash;&gt;-->
+<!--<div th:if="${message != null}">-->
+<!--    <p th:text="${message}"></p>-->
+<!--</div>-->
+
+<!--<table th:if="${userID != null}">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>UserID</th>-->
+<!--        <th>Name</th>-->
+<!--        <th>Email</th>-->
+<!--        &lt;!&ndash; Add more columns as needed &ndash;&gt;-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr>-->
+<!--        <td th:text="${userID}"></td>-->
+<!--        <td th:text="${name}"></td>-->
+<!--        <td th:text="${email}"></td>-->
+<!--        &lt;!&ndash; Add more columns as needed &ndash;&gt;-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BITS-HYD MyClass</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            width:750px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>User details</h1>
+
+    <!-- Check if message exists -->
+    <div th:if="${message != null}">
+        <p th:text="${message}"></p>
+    </div>
+
+    <table th:if="${userID != null}">
+        <thead>
+        <tr>
+            <th>UserID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <!-- Add more columns as needed -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${userID}"></td>
+            <td th:text="${name}"></td>
+            <td th:text="${email}"></td>
+            <!-- Add more columns as needed -->
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
